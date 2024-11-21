@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin.examen.databinding.ItemEventoBinding
+import com.example.kotlin.examen.framework.adapter.viewholder.EventoViewHolder
 
-class EventosAdapter : ListAdapter<Map<String, Any>, EventosAdapter.EventoViewHolder>(DiffCallback()) {
+class EventosAdapter : ListAdapter<Map<String, Any>, EventoViewHolder>(DiffCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
@@ -21,41 +21,28 @@ class EventosAdapter : ListAdapter<Map<String, Any>, EventosAdapter.EventoViewHo
         position: Int,
     ) {
         val evento = getItem(position)
-        holder.bind(evento)
+        holder.bind(evento) // Aquí se usa la función "bind"
     }
 
-    class EventoViewHolder(
-        private val binding: ItemEventoBinding,
-    ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(evento: Map<String, Any>) {
-            binding.textDate.text = evento["date"]?.toString() ?: "N/A"
-            binding.textDescription.text = evento["description"]?.toString() ?: "N/A"
-            // Agregar más bindings según sea necesario
-        }
-    }
-
+    // DiffCallback para comparar elementos
     class DiffCallback : DiffUtil.ItemCallback<Map<String, Any>>() {
         override fun areItemsTheSame(
             oldItem: Map<String, Any>,
             newItem: Map<String, Any>,
-        ): Boolean {
-            // Comparar por un identificador único, como objectId
-            return oldItem["objectId"] == newItem["objectId"]
-        }
+        ): Boolean = oldItem["objectId"] == newItem["objectId"]
 
         override fun areContentsTheSame(
             oldItem: Map<String, Any>,
             newItem: Map<String, Any>,
-        ): Boolean {
-            // Comparar manualmente las claves importantes
-            return oldItem["date"] == newItem["date"] &&
+        ): Boolean =
+            oldItem["date"] == newItem["date"] &&
                 oldItem["description"] == newItem["description"] &&
                 oldItem["lang"] == newItem["lang"] &&
                 oldItem["category1"] == newItem["category1"] &&
                 oldItem["category2"] == newItem["category2"] &&
                 oldItem["granularity"] == newItem["granularity"] &&
                 oldItem["createdAt"] == newItem["createdAt"] &&
-                oldItem["updatedAt"] == newItem["updatedAt"]
-        }
+                oldItem["updatedAt"] == newItem["updatedAt"] &&
+                oldItem["className"] == newItem["className"]
     }
 }

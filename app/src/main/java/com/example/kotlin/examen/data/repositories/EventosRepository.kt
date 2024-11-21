@@ -34,6 +34,12 @@ class EventosRepository {
         for (key in keySet()) {
             map[key] = get(key) ?: ""
         }
+
+        map["objectId"] = this.objectId
+        map["createdAt"] = this.createdAt?.toString() ?: ""
+        map["updatedAt"] = this.updatedAt?.toString() ?: ""
+        map["className"] = this.className
+
         return map
     }
 }
