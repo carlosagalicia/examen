@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textLang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Language"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textCategory1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category1"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textCategory2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textGranularity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Granularity"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textCreatedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Created At"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textUpdatedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Updated At"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textObjectId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Object ID"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textClassName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Class Name"
+            android:textSize="16sp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
